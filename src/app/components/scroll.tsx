@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, CSSProperties } from "react";
 
-export interface StripesScrollProps {
+export interface ScrollProps {
   /** URL of the stripe image */
   bgImage: string;
   /** Size of each tile, in px (defaults to 30×30) */
@@ -14,7 +14,7 @@ export interface StripesScrollProps {
   className?: string;
 }
 
-const StripesScroll: React.FC<StripesScrollProps> = ({
+const Scroll: React.FC<ScrollProps> = ({
   bgImage,
   tileSize = "30rem",
   speed = 0.5,
@@ -41,4 +41,4 @@ const StripesScroll: React.FC<StripesScrollProps> = ({
   return <div className={className} style={style} />;
 };
 
-export default StripesScroll;
+export default Scroll;

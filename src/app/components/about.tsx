@@ -5,10 +5,10 @@ import { MailIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <Flex className="overflow-hidden font-averia w-full bg-retroBlue">
+    <Flex className="overflow-hidden font-averia w-full bg-coffeeWhite">
       <div
         id="about"
-        className="text-retroWhite h-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-6xl sm:mx-auto w-full"
+        className="text-coffeeBrown h-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-6xl sm:mx-auto w-full"
       >
         <Flex
           direction="column"
@@ -17,14 +17,12 @@ const About = () => {
         >
           <Flex
             direction="column"
-            className="text-start text-3xl mb-[-1rem] sm:text-5xl font-extrabold gap-6"
+            className="text-start mb-6 text-3xl sm:text-5xl font-extrabold gap-6"
           >
-            <span className="font-extrabold w-min whitespace-nowrap text-sm border-2 border-retroWhite rounded-xl p-2">
+            <span className="font-extrabold w-min whitespace-nowrap text-sm border-2 border-coffeeGreen rounded-xl p-2">
               ABOUT
             </span>
-            <Text className="font-funkydori text-5xl lg:text-6xl">
-              Hacking since 1746.
-            </Text>
+            <Text className=" text-4xl lg:text-5xl">Hacking since 1746.</Text>
           </Flex>
           <Flex
             direction="column"
@@ -49,15 +47,15 @@ const About = () => {
               brilliant, innovative, and impactful ideas.
             </Text>
             <Box className="whitespace-normal mt-2">
-              <span className="text-red-600 font-semibold">
+              <span className="text-coffeeGreen font-semibold">
                 Other questions? Contact us at:{" "}
               </span>
               <p className="mt-2">
                 <a
                   href="mailto:team@hackprinceton.com"
-                  className="bg-red-600/40 w-min gap-2 whitespace-nowrap flex items-center hover:bg-retroRed/60 transition-all hover:underline px-4 py-2 rounded-xl font-bold"
+                  className="bg-coffeeGreen/40 w-min gap-2 whitespace-nowrap flex items-center hover:bg-coffeeGreen/60 transition-all hover:underline px-4 py-2 rounded-xl font-bold"
                 >
-                  <MailIcon size={24} className="text-retroRed" />
+                  <MailIcon size={24} className="text-coffeeGreen" />
                   team@hackprinceton.com
                 </a>
               </p>
@@ -66,7 +64,7 @@ const About = () => {
         </Flex>
         <Flex className="relative w-full h-48 sm:h-full">
           <Image
-            src="/images/retrohacks_images/retro_badge.png"
+            src="/images/coffeehacks_images/hackprinceton_1_nobg.png"
             alt="badge"
             fill={true}
             className={`object-contain z-10 rounded-3xl p-10 drop-shadow-lg`}

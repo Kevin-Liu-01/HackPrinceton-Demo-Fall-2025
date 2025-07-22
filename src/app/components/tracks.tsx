@@ -18,7 +18,7 @@ const trackCards = [
     description:
       "Projects that improve healthcare delivery, promote wellness, or tackle public health challenges. Examples include telehealth solutions, AI-driven diagnostics, mental health tools, and fitness tracking apps.",
     icon: <HeartIcon size={24} />,
-    color: "bg-red-400 text-red-100 border-retroRed",
+    color: "bg-red-400 text-red-100 border-red-700",
   },
   {
     title: "SUSTAINABILITY",
@@ -51,7 +51,7 @@ const extraAwards = [
 
     icon: (
       <TrophyIcon
-        className="p-2 bg-amber-500 text-amber-200 border-retroBlue border rounded-xl h-12 w-12"
+        className="p-2 bg-amber-500 text-amber-200 border-amber-700 border rounded-xl h-12 w-12"
         size={24}
       />
     ),
@@ -71,7 +71,7 @@ const extraAwards = [
     description: "Awarded to the best game project.",
     icon: (
       <Gamepad2Icon
-        className="p-2 bg-purple-500 text-purple-200 border-retroBlue border rounded-xl h-12 w-12"
+        className="p-2 bg-purple-500 text-purple-200 border-purple-700 border rounded-xl h-12 w-12"
         size={24}
       />
     ),
@@ -81,7 +81,7 @@ const extraAwards = [
     description: "Awarded to the best hardware project.",
     icon: (
       <CogIcon
-        className="p-2 bg-orange-500 text-orange-200 border-retroBlue border rounded-xl h-12 w-12"
+        className="p-2 bg-orange-500 text-orange-200 border-orange-700 border rounded-xl h-12 w-12"
         size={24}
       />
     ),
@@ -92,12 +92,12 @@ const TrackCard = ({ title, description, icon, color }) => {
   return (
     <Flex
       direction="column"
-      className="p-4 bg-retroRed/70 border border-retroRed backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
+      className="p-4 bg-coffeeWhite/80 text-coffeeGreen border border-coffeeGreen backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
     >
       <Flex
         align="center"
         gap="2"
-        className="text-xl sm:text-2xl font-semibold"
+        className="text-xl font-averia sm:text-2xl font-semibold"
       >
         <Box className={`border rounded-xl p-2 ${color}`}>{icon}</Box>
         {title}
@@ -111,7 +111,7 @@ const Tracks = () => {
   return (
     <Box
       id="tracks"
-      className="overflow-hidden relative w-full border-y border-retroRed bg-retroWhite"
+      className="overflow-hidden relative w-full border-y border-coffeeGreen bg-coffeeBrown"
     >
       <Flex
         gap="4"
@@ -122,9 +122,9 @@ const Tracks = () => {
           <Flex
             direction="column"
             align="center"
-            className="mb-4 sm:mb-8 text-3xl sm:text-5xl text-retroRed font-extrabold gap-4"
+            className="mb-4 sm:mb-8 text-3xl sm:text-5xl text-coffeeWhite font-extrabold gap-4"
           >
-            <span className="font-extrabold w-min whitespace-nowrap text-retroBlue text-sm border-2 border-retroBlue rounded-lg p-2">
+            <span className="font-extrabold w-min whitespace-nowrap text-coffeeWhite text-sm border-2 border-coffeeWhite rounded-lg p-2">
               TRACKS
             </span>
             <p>SPRING 2025 TRACKS</p>
@@ -172,7 +172,7 @@ const Tracks = () => {
 
         {/* Extra Awards Section */}
         <Flex align="center" justify="center" className="flex-col mt-4">
-          <h2 className="text-3xl font-bold text-retroBlue mb-6">
+          <h2 className="text-3xl font-bold text-coffeeWhite mb-6">
             EXTRA AWARDS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -181,12 +181,14 @@ const Tracks = () => {
                 key={index}
                 align="center"
                 gap="4"
-                className="bg-blue-800/70 hover:scale-[1.01] transition-all flex-none border-retroBlue border text-white p-6 rounded-2xl shadow-md"
+                className="bg-coffeeGreen/80 hover:scale-[1.01] transition-all flex-none border-coffeeWhite/50 border text-coffeeWhite p-6 rounded-2xl shadow-md"
               >
                 {award.icon}
 
                 <Flex className="flex-col">
-                  <h3 className="text-lg font-semibold">{award.title}</h3>
+                  <h3 className="text-lg font-semibold font-averia">
+                    {award.title}
+                  </h3>
                   <p className="mt-2">{award.description}</p>
                 </Flex>
               </Flex>
@@ -217,16 +219,16 @@ const Tracks = () => {
           direction="column"
           className="whitespace-normal mt-2 col-span-2 font-[family-name:var(--font-geist-mono)]"
         >
-          <span className="text-retroRed font-semibold">
+          <span className="text-coffeeWhite font-semibold">
             Want to collaborate with us on a track for Spring 2025? Contact us
             at:{" "}
           </span>
           <p className="mt-2">
             <a
               href="mailto:sponsor@hackprinceton.com"
-              className="bg-retroRed/20 text-retroBlue w-min gap-2 whitespace-nowrap flex items-center hover:bg-retroRed/50 transition-all hover:underline px-4 py-2 rounded-xl font-bold"
+              className="bg-coffeeWhite/40 text-coffeeWhite w-min gap-2 whitespace-nowrap flex items-center hover:bg-coffeeWhite/50 transition-all hover:underline px-4 py-2 rounded-xl font-bold"
             >
-              <MailIcon size={24} className="text-retroRed" />
+              <MailIcon size={24} className="text-coffeeWhite" />
               sponsor@hackprinceton.com
             </a>
           </p>

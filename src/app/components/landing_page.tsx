@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import StripesScroll from "./stripesscroll";
+import Scroll from "./scroll";
+import Image from "next/image";
 
 const doorVariants = {
   closedLeft: { rotateY: 0 },
@@ -67,22 +68,35 @@ const LandingPage: React.FC = () => {
           {/* interior content after close */}
           {showDoorContent && (
             <motion.div
-              className="relative flex flex-col items-center justify-center h-[70%] w-full z-30"
+              className="relative flex flex-col mt-[4.9rem] items-center justify-center h-[70%] w-full z-30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             >
-              <img
-                src="/images/coffeehacks_images/hackprinceton_2_nobg.png"
-                alt="Hack Princeton"
-                className="w-full max-w-[550px] px-8 mx-auto"
-              />
+              <div className="max-w-[39rem] px-8 mx-auto ">
+                <Image
+                  src="/images/coffeehacks_images/hackprinceton_2_nobg.png"
+                  alt="Hack Princeton"
+                  className="w-full h-auto"
+                  height={2000}
+                  width={2000}
+                />
+                <div className="font-averia">
+                  <h1 className="text-3xl tracking-tight text- max-w-[22rem] text-left font-extrabold text-coffeeBrown mt-4">
+                    “Fueling innovation, one cup at a time.”
+                  </h1>
+                  <p className="text-lg ml-auto max-w-[22rem] text-right sm:text-xl text-coffeeBrown/80 tracking-tight font-semibold mt-2">
+                    Made with love, <br />
+                    The HackPrinceton Team
+                  </p>
+                </div>
+              </div>
             </motion.div>
           )}
 
           {/* inner panel with contained stripe background */}
-          <div className="absolute inset-[10%] bg-coffeeWhite rounded-xl overflow-hidden z-20">
-            <StripesScroll
+          <div className="absolute inset-[10%] shadow-inner bg-coffeeWhite rounded-xl overflow-hidden z-20">
+            <Scroll
               bgImage="/images/coffeehacks_images/bg_nobg.png"
               tileSize={"20rem"}
               speed={0.5}
@@ -102,7 +116,7 @@ const LandingPage: React.FC = () => {
             "bg-coffeeBg shadow-lg " +
             "border-l-8 border-coffeeBrown " +
             "origin-right transform overflow-hidden " +
-            "z-20"
+            "z-20 flex justify-center items-center"
           }
           variants={doorVariants}
           initial="closedRight"
@@ -111,7 +125,7 @@ const LandingPage: React.FC = () => {
           {/* interior content after close */}
           {showDoorContent && (
             <motion.div
-              className="relative flex flex-col items-center justify-center h-[70%] w-full z-30"
+              className="relative flex flex-col items-center justify-center mx-auto z-30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -119,7 +133,7 @@ const LandingPage: React.FC = () => {
               <motion.img
                 src="/images/coffeehacks_images/coffeecup_nobg.png"
                 alt="Wobbling Cup"
-                className="absolute bottom-[-2rem] left-[10%] w-24 sm:w-32 lg:w-48 xl:w-64"
+                className="w-24 mt-20 sm:w-32 lg:w-48 xl:w-64"
                 animate={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{
                   duration: 8,
@@ -131,8 +145,8 @@ const LandingPage: React.FC = () => {
           )}
 
           {/* inner panel with contained stripe background */}
-          <div className="absolute inset-[10%] bg-coffeeGreen/30 rounded-xl overflow-hidden z-20">
-            <StripesScroll
+          <div className="absolute shadow-inner inset-[10%] bg-coffeeGreen/30 rounded-xl overflow-hidden z-20">
+            <Scroll
               bgImage="/images/coffeehacks_images/bg_nobg.png"
               tileSize={"20rem"}
               speed={0.5}
@@ -147,28 +161,38 @@ const LandingPage: React.FC = () => {
 
         <AnimatePresence>
           {!showLogo ? (
-            /* pouring GIF underneath doors */
-            <motion.img
-              key="pouring"
-              src="/images/coffeehacks_images/tigercoffee.GIF"
-              alt="Pouring Coffee"
-              className="absolute top-20 left-0 right-0 bottom-0 m-auto max-h-[calc(100%-5rem)] z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            />
+            <>
+              <div className="absolute h-full w-full bg-coffeeWhite rounded-xl overflow-hidden z-5">
+                <Scroll
+                  bgImage="/images/coffeehacks_images/bg_nobg.png"
+                  tileSize={"20rem"}
+                  speed={0.5}
+                  direction="right"
+                  className="w-full h-full"
+                />
+              </div>
+              <motion.img
+                key="pouring"
+                src="/images/coffeehacks_images/tigercoffee.GIF"
+                alt="Pouring Coffee"
+                className="absolute top-20 left-0 right-0 bottom-0 m-auto max-h-[calc(100%-5rem)] z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
+            </>
           ) : (
             /* main content after doors close */
             <div className="relative flex flex-col h-full w-full z-30 overflow-hidden">
-              <img
+              {/* <img
                 src="/images/coffeehacks_images/hackprinceton_1_nobg.png"
                 alt="Nassau Hall Badge"
                 className="absolute top-1/3 left-1/2 w-auto h-20 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-md z-30"
-              />
-              <div className="absolute bottom-0 w-full h-[30%] flex items-center justify-center bg-coffeeGreen text-coffeeBrown z-30">
+              /> */}
+              <div className="absolute bottom-0 w-full h-[25%] flex items-center justify-center bg-coffeeGreen text-coffeeWhite z-30">
                 <div className="flex flex-col gap-4 font-bold">
-                  <h2 className="border-b-2 pb-2 border-coffeeBrown text-3xl sm:text-5xl">
+                  <h2 className="border-b-2 pb-2 border-coffeeWhite text-3xl sm:text-5xl">
                     EST. 1746
                   </h2>
                   <a
@@ -181,10 +205,12 @@ const LandingPage: React.FC = () => {
                   </a>
                 </div>
               </div>
-              <img
+              <Image
                 src="/images/coffeehacks_images/coffeebean.png"
                 alt="Coffee Bean Badge"
                 className="absolute top-1/3 left-1/2 w-16 h-16 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-md z-30"
+                height={64}
+                width={64}
               />
             </div>
           )}
