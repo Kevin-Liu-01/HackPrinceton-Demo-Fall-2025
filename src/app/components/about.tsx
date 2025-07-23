@@ -5,7 +5,7 @@ import { MailIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <Flex className="overflow-hidden font-averia w-full bg-coffeeWhite">
+    <Flex className="overflow-hidden pb-8 font-averia w-full bg-coffeeWhite">
       <div
         id="about"
         className="text-coffeeBrown h-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-6xl sm:mx-auto w-full"
@@ -67,7 +67,7 @@ const About = () => {
             src="/images/coffeehacks_images/hackprinceton_1_nobg.png"
             alt="badge"
             fill={true}
-            className={`object-contain z-10 rounded-3xl p-10 drop-shadow-lg`}
+            className={`object-contain z-10 rounded-3xl p-10`}
             priority
           />
         </Flex>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const MLHBanner = () => {
   return (
     <a
@@ -6,13 +8,15 @@ const MLHBanner = () => {
       rel="noopener noreferrer"
       className="z-50"
     >
-      <img
+      <Image
         alt="Major League Hacking 2025 Hackathon Season"
+        width={200}
+        height={50}
         loading="lazy"
         decoding="async"
         data-nimg="1"
         className="transparent w-12 sm:w-16 md:w-20 lg:w-24"
-        src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-red.svg"
+        src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-red.svg"
       />
     </a>
   );

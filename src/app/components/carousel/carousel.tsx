@@ -13,7 +13,6 @@ import {
 import { easing } from "maath";
 import "../../utils/util";
 import { Flex, Box } from "@radix-ui/themes";
-import Checkerboard from "../checkerboard";
 import { MouseIcon } from "lucide-react";
 
 const SiteURLS = [
@@ -31,14 +30,13 @@ const CarouselComponent = () => {
   return (
     <main
       id="carousel"
-      className="hidden sm:block h-screen w-full py-8 text-retroRed bg-retroRed"
+      className="hidden sm:block h-screen w-full py-12 text-coffeeGreen bg-coffeeBrown"
     >
       <Flex
         justify="center"
-        className="flex-col relative bg-gradient-to-br no-scrollbar from-retroWhite to-pink-200 overflow-hidden mx-auto scroll-smooth rounded-3xl h-full w-[90%]"
+        className="flex-col relative bg-gradient-to-br no-scrollbar from-coffeeWhite to-green-200 overflow-hidden mx-auto scroll-smooth rounded-3xl h-full w-[90%]"
       >
-        <Checkerboard scrollXTop={0} />
-        <Box className="absolute top-0 font-funkydori mt-8 text-5xl w-full font-bold text-center p-4">
+        <Box className="absolute top-0 font-averia mt-8 text-5xl w-full font-bold text-center p-4">
           See You Soon!
         </Box>
         <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
@@ -52,9 +50,9 @@ const CarouselComponent = () => {
           {/* <Environment preset="dawn" background blur={0.5} /> */}
         </Canvas>
         <img
-          src="/images/logos/logo_circle.png"
+          src="/images/coffeehacks_images/coffeebean.png"
           alt="HPLogo"
-          className="absolute bottom-8 left-4 px-2 h-32 w-auto"
+          className="absolute bottom-4 left-4 px-2 h-32 w-auto"
         />
         <Flex
           align="center"
@@ -63,7 +61,6 @@ const CarouselComponent = () => {
           <MouseIcon className="h-8 w-8 animate-bounce" />
           <div>Try scrolling!</div>
         </Flex>
-        <Checkerboard scrollXTop={0} />
       </Flex>
     </main>
   );
@@ -144,7 +141,7 @@ function Card({ url, name, ...props }) {
           ref={textRef}
           position={[0, 0.6, 0]} // Position above the card
           fontSize={0.1}
-          color="#BF3131"
+          color="#1e4027"
           anchorX="center"
           anchorY="middle"
           fontWeight={600}
@@ -161,7 +158,9 @@ function Card({ url, name, ...props }) {
 
 function Banner(props) {
   const ref = useRef();
-  const texture = useTexture("/images/logos/hp-combinedlogo.png");
+  const texture = useTexture(
+    "/images/coffeehacks_images/hackprinceton_2_nobg.png"
+  );
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
   const scroll = useScroll();
   useFrame((state, delta) => {

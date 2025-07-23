@@ -1,61 +1,74 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Flex } from "@radix-ui/themes";
 import { MenuIcon, XIcon } from "lucide-react";
 import MLHBanner from "./mlh";
-import Checkerboard from "../checkerboard";
+import Scroll from "../scroll";
+import Image from "next/image";
 
 const Navbar = () => {
-  const [scrollXTop, setScrollXTop] = useState(0);
-  const [scrollXBottom, setScrollXBottom] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const updateScroll = () => {
-      setScrollXTop((prev) => prev - 0.5); // Scroll top stripe left
-      setScrollXBottom((prev) => prev + 0.5); // Scroll bottom stripe right
-    };
-
-    const interval = setInterval(updateScroll, 16); // Smooth animation ~60fps
-    return () => clearInterval(interval);
-  }, []);
 
   const navbarButtons = [
     { label: "Apply", href: "https://my.hackprinceton.com" },
     { label: "About", href: "#about" },
     { label: "Tracks", href: "#tracks" },
     { label: "FAQ", href: "#faq" },
-    { label: "Contributors", href: "#contributors" },
-    { label: "Resources", href: "#resources" },
+    // { label: "Contributors", href: "#contributors" },
+    // { label: "Resources", href: "#resources" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-retroWhite">
+    <nav className="fixed top-0 left-0 w-full z-50 font-averia bg-coffeeBrown border-y-2 border-coffeeWhite">
       {/* Top scrolling red stripe */}
-      <Checkerboard scrollXTop={scrollXTop} />
+      {/* <Scroll
+        bgImage="/images/coffeehacks_images/bannertop_nobg.svg"
+        tileSize={"6rem"}
+        speed={0.5}
+        direction="left"
+        className="w-full h-2"
+      /> */}
+      <div className="absolute z-20 shadow-inner opacity-15 rounded-xl h-full w-full overflow-hidden">
+        <Scroll
+          bgImage="/images/coffeehacks_images/bg_nobg.png"
+          tileSize={"15rem"}
+          speed={0.5}
+          direction="right"
+          className="w-full h-full"
+        />
+      </div>
 
       {/* Logo Section */}
       <Flex justify="center" align="center" className="w-full relative">
         <Flex
           align="center"
-          className="z-20 my-3 max-w-7xl w-full lg:w-auto px-8 h-16 relative"
+          className="z-20 my-3 max-w-7xl w-full px-8 h-16 relative"
         >
-          <div className="relative h-full flex items-center">
-            <img
-              src="/images/logos/hplogo_text.png"
+          <div className="relative mr-auto h-full flex items-center">
+            <Image
+              src="/images/coffeehacks_images/hackprinceton_3.png"
               alt="HackPrinceton Logo"
-              className="relative h-full z-20"
+              className="relative h-full py-1 w-auto z-20"
+              height={1000}
+              width={1000}
             />
-            <span className="z-20 absolute top-1/4 right-2 transform -translate-y-1/2 text-retroRed font-bold">
+            <Image
+              src="/images/coffeehacks_images/hackpton_nobg.png"
+              alt="HackPrinceton Fall 2025 Logo"
+              className="relative h-full w-auto ml-1 z-20"
+              height={1000}
+              width={1000}
+            />
+            {/* <span className="z-20 absolute top-1/4 right-2 transform -translate-y-1/2 text-coffeeGreen font-bold">
               spring 2025
-            </span>
+            </span> */}
           </div>
 
           {/* Hamburger Menu for Mobile */}
-          <div className="lg:hidden ml-auto bg-retroWhite border-2 border-retroRed rounded-lg p-1 flex items-center">
+          <div className="lg:hidden ml-auto bg-retroWhite border-2 border-coffeeGreen rounded-lg p-1 flex items-center">
             <button
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="text-retroRed focus:outline-none"
+              className="text-coffeeGreen focus:outline-none"
             >
               {isMenuOpen ? (
                 <XIcon className="w-6 h-6" />
@@ -71,7 +84,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={button.href}
-                className="border-2 hover:bg-yellow-100 hover:scale-[1.05] transition-all border-retroRed rounded-xl py-1 px-2 text-retroRed bg-retroWhite font-bold text-base hover:text-retroRed mx-2"
+                className="border-2 hover:bg-yellow-100 hover:scale-[1.05] transition-all border-coffeeGreen rounded-xl py-1 px-2 text-coffeeGreen bg-retroWhite font-bold text-base hover:text-coffeeGreen mx-2"
               >
                 {button.label}
               </a>
@@ -86,31 +99,43 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden z-10 bg-retroWhite w-full absolute top-16 left-0 shadow-lg transition-all">
-            <Flex align="center" className="py-4 flex-col">
+          <div className="lg:hidden z-10 bg-coffeeBrown w-full absolute top-16 left-0 shadow-lg transition-all">
+            <Flex align="center" className="pb-4 pt-8 flex-col">
               {navbarButtons.map((button, index) => (
                 <a
                   key={index}
                   href={button.href}
-                  className="block py-2 text-xl px-4 text-retroRed font-bold hover:bg-yellow-100 hover:scale-[1.05] transition-all"
+                  className="block py-2 text-xl px-4 text-coffeeWhite font-bold hover:bg-yellow-100 hover:scale-[1.05] transition-all"
                 >
                   {button.label}
                 </a>
               ))}
             </Flex>
-            <Checkerboard scrollXTop={scrollXBottom} />
+            <div
+              className="absolute mb-[-2rem] bottom-0 left-0 w-full h-8 bg-repeat-x bg-contain z-30"
+              style={{
+                backgroundImage:
+                  "url('/images/coffeehacks_images/bannertop_nobg.svg')",
+              }}
+            />
           </div>
         )}
-        <div className="absolute z-[-5] transition-all top-[6.25rem] right-4 w-auto inline  lg:hidden">
+        <div className="absolute z-[-5] transition-all top-[5.6rem] right-4 w-auto inline  lg:hidden">
           <MLHBanner />
         </div>
 
         {/* Red stripe */}
-        <div className="h-1 z-10 mt-4 bg-retroRed absolute w-full"></div>
+        {/* <div className="h-1 z-10 mt-4 bg-coffeeGreen absolute w-full"></div> */}
       </Flex>
 
       {/* Bottom scrolling red stripe */}
-      <Checkerboard scrollXTop={scrollXBottom} />
+      {/* <Scroll
+        bgImage="/images/coffeehacks_images/bannertop_nobg.svg"
+        tileSize={"3rem"}
+        speed={0.5}
+        direction="right"
+        className="w-full h-2"
+      /> */}
     </nav>
   );
 };

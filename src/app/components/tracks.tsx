@@ -111,7 +111,7 @@ const Tracks = () => {
   return (
     <Box
       id="tracks"
-      className="overflow-hidden relative w-full border-y border-coffeeGreen bg-coffeeBrown"
+      className="overflow-hidden relative py-4 w-full border-y border-coffeeGreen bg-coffeeBrown"
     >
       <Flex
         gap="4"
@@ -122,12 +122,12 @@ const Tracks = () => {
           <Flex
             direction="column"
             align="center"
-            className="mb-4 sm:mb-8 text-3xl sm:text-5xl text-coffeeWhite font-extrabold gap-4"
+            className="mb-4 sm:mb-8 font-averia text-3xl sm:text-5xl text-coffeeWhite font-extrabold gap-4"
           >
             <span className="font-extrabold w-min whitespace-nowrap text-coffeeWhite text-sm border-2 border-coffeeWhite rounded-lg p-2">
               TRACKS
             </span>
-            <p>SPRING 2025 TRACKS</p>
+            <p>Fall 2025 TRACKS</p>
           </Flex>
 
           {/* <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -172,7 +172,7 @@ const Tracks = () => {
 
         {/* Extra Awards Section */}
         <Flex align="center" justify="center" className="flex-col mt-4">
-          <h2 className="text-3xl font-bold text-coffeeWhite mb-6">
+          <h2 className="text-3xl font-bold font-averia text-coffeeWhite mb-6">
             EXTRA AWARDS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -205,7 +205,7 @@ const Tracks = () => {
 
               <Flex className="flex-col">
                 <a
-                  href="https://hackprinceton-spring-2025.devpost.com/?ref_feature=challenge&ref_medium=discover"
+                  href="https://hackprinceton-fall-2025.devpost.com/?ref_feature=challenge&ref_medium=discover"
                   className="mt-2 text-lg hover:underline font-semibold"
                 >
                   Click here to view the DevPost and all challenges & prizes!
@@ -220,8 +220,7 @@ const Tracks = () => {
           className="whitespace-normal mt-2 col-span-2 font-[family-name:var(--font-geist-mono)]"
         >
           <span className="text-coffeeWhite font-semibold">
-            Want to collaborate with us on a track for Spring 2025? Contact us
-            at:{" "}
+            Want to collaborate with us on a track for Fall 2025? Contact us at:{" "}
           </span>
           <p className="mt-2">
             <a

@@ -1,41 +1,48 @@
+// components/Scroll.tsx
 "use client";
 import React, { useState, useEffect, CSSProperties } from "react";
 
 export interface ScrollProps {
   /** URL of the stripe image */
   bgImage: string;
-  /** Size of each tile, in px (defaults to 30×30) */
+  /** Size of each tile in CSS syntax (e.g., "30px 30px", "2rem") */
   tileSize?: string;
   /** How many px to move each frame (defaults to 0.5) */
   speed?: number;
-  /** 'left' will scroll negatively, 'right' positively */
-  direction?: "left" | "right";
-  /** Any extra classes you want on the wrapper */
+  /** Scroll direction */
+  direction?: "left" | "right" | "up" | "down";
+  /** Additional CSS classes for the wrapper */
   className?: string;
 }
 
 const Scroll: React.FC<ScrollProps> = ({
   bgImage,
-  tileSize = "30rem",
+  tileSize = "30px 30px",
   speed = 0.5,
   direction = "left",
   className = "",
 }) => {
-  const [scrollX, setScrollX] = useState(0);
+  const [{ x, y }, setScroll] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const delta = direction === "left" ? -speed : speed;
-    const iv = setInterval(() => {
-      setScrollX((x) => x + delta);
-    }, 16);
-    return () => clearInterval(iv);
+    // compute delta per frame
+    const deltaX =
+      direction === "left" ? -speed : direction === "right" ? speed : 0;
+    const deltaY =
+      direction === "up" ? -speed : direction === "down" ? speed : 0;
+
+    const interval = setInterval(() => {
+      setScroll((prev) => ({ x: prev.x + deltaX, y: prev.y + deltaY }));
+    }, 16); // ~60fps
+
+    return () => clearInterval(interval);
   }, [direction, speed]);
 
   const style: CSSProperties = {
     backgroundImage: `url('${bgImage}')`,
     backgroundRepeat: "repeat",
-    backgroundSize: `${tileSize}`,
-    backgroundPosition: `${scrollX}px 0`,
+    backgroundSize: tileSize,
+    backgroundPosition: `${x}px ${y}px`,
   };
 
   return <div className={className} style={style} />;

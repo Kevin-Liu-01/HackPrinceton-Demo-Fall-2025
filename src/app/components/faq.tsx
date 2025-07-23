@@ -3,7 +3,6 @@ import { Box, Flex } from "@radix-ui/themes";
 // import { MatrixRainingLetters } from "react-mdr";
 import { ChevronDown, MessageCircleQuestionIcon } from "lucide-react";
 import { useState } from "react";
-import Checkerboard from "./checkerboard";
 
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +83,7 @@ const Faq = () => {
       id="faq"
       gap="4"
       align="center"
-      className="flex-col relative text-white h-full overflow-clip w-full bg-coffeeGreen"
+      className="flex-col relative py-8 text-white h-full overflow-clip w-full bg-coffeeGreen"
     >
       <Flex
         direction="column"
@@ -94,7 +93,7 @@ const Faq = () => {
         <Flex
           direction="column"
           align="center"
-          className="mb-8 text-3xl text-center sm:text-5xl font-extrabold gap-4"
+          className="mb-8 text-3xl font-averia text-center sm:text-5xl font-extrabold gap-4"
         >
           <span className="bg-coffeebrown font-extrabold w-min whitespace-nowrap text-coffeeWhite text-sm border-2 border-coffeeWhite rounded-lg p-2">
             FAQ
@@ -115,7 +114,6 @@ const Faq = () => {
           ))}
         </Flex>
       </Flex>
-      <Checkerboard scrollXTop={0} />
     </Flex>
   );
 };
