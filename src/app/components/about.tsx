@@ -17,7 +17,7 @@ const About = () => {
         >
           <Flex
             direction="column"
-            className="text-start mb-6 text-3xl sm:text-5xl font-extrabold gap-6"
+            className="text-start mb-6 text-3xl sm:text-5xl font-extrabold gap-2"
           >
             <span className="font-extrabold w-min whitespace-nowrap text-sm border-2 border-coffeeGreen rounded-xl p-2">
               ABOUT

@@ -95,10 +95,10 @@ const LandingPage: React.FC = () => {
                   height={2000}
                 />
                 <div className="font-averia">
-                  <h1 className="text-3xl tracking-tight max-w-[22rem] text-left font-extrabold text-coffeeBrown mt-4">
+                  <h1 className="text-base sm:text-3xl tracking-tight max-w-[22rem] text-left font-extrabold text-coffeeBrown mt-4">
                     “Fueling innovation, one cup at a time.”
                   </h1>
-                  <p className="text-lg ml-auto max-w-[22rem] text-right sm:text-xl text-coffeeBrown/80 tracking-tight font-semibold mt-2">
+                  <p className="text-xs sm:text-lg ml-auto max-w-[22rem] text-right  text-coffeeBrown/80 tracking-tight font-semibold mt-2">
                     Made with love, <br />
                     The HackPrinceton Team
                   </p>
@@ -112,7 +112,7 @@ const LandingPage: React.FC = () => {
               bgImage="/images/coffeehacks_images/bg_nobg.png"
               tileSize={"20rem"}
               speed={0.5}
-              direction="right"
+              direction="down"
               className="w-full h-full"
             />
             <Image
@@ -136,7 +136,7 @@ const LandingPage: React.FC = () => {
         >
           {showDoorContent && (
             <motion.div
-              className="relative flex flex-col items-center justify-center mx-auto z-30"
+              className="relative hidden sm:flex flex-col items-center justify-center mx-auto z-30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -157,11 +157,11 @@ const LandingPage: React.FC = () => {
 
           <div className="absolute shadow-inner inset-[10%] bg-coffeeGreen/30 border-2 border-coffeeGreen rounded-xl overflow-hidden z-20">
             <Scroll
-              bgImage="/images/coffeehacks_images/bg_nobg.png"
-              tileSize={"20rem"}
+              bgImage="/images/coffeehacks_images/coffeecup_nobg.png"
+              tileSize={"9.3rem"}
               speed={0.5}
-              direction="right"
-              className="w-full h-full"
+              direction="down"
+              className="h-full w-full p-4 flex opacity-30"
             />
             <Image
               src="/images/coffeehacks_images/glass.png"
