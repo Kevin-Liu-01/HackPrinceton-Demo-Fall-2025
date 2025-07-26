@@ -41,7 +41,8 @@ const About = () => {
             </Text>
             <Text>
               <strong>
-                For 36 hours from March 28 - 30 on Princeton University’s campus
+                For 36 hours from November 7 - 9 on Princeton University’s
+                campus
               </strong>
               , you’ll have the opportunity to collaborate and build out
               brilliant, innovative, and impactful ideas.
