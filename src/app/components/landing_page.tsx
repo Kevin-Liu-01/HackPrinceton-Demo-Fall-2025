@@ -20,6 +20,42 @@ const signVariants = {
   },
 };
 
+// --- Coffee Pour Animation ---
+// Define the properties for each drop in the stream
+const pourDrops = [
+  { x: -5, y: -80, delay: 0, duration: 0.5 },
+  { x: 0, y: -80, delay: 0.2, duration: 0.4 },
+  { x: 3, y: -80, delay: 0.3, duration: 0.6 },
+  { x: -3, y: -80, delay: 0.4, duration: 0.5 },
+];
+
+/**
+ * A component that renders a looping stream of coffee drops pouring down.
+ */
+const CoffeeStream = () => (
+  <motion.div className="absolute inset-0 flex items-center justify-start px-12 mt-20 sm:mt-24 lg:mt-48">
+    {pourDrops.map((drop, index) => (
+      <motion.div
+        key={index}
+        className="absolute w-1 h-3 sm:w-2 sm:h-4 bg-orange-950 rounded-full"
+        initial={{ opacity: 0, y: drop.y, x: drop.x }}
+        animate={{
+          opacity: [0, 1, 0], // Fade in, then fade out as it "lands"
+          y: [drop.y, 20], // Animate from above the cup to inside the brim
+        }}
+        transition={{
+          duration: drop.duration,
+          ease: "linear",
+          repeat: Infinity,
+          repeatDelay: 1.5, // Time for the whole stream to loop
+          delay: drop.delay, // Stagger each drop
+        }}
+      />
+    ))}
+  </motion.div>
+);
+// --- End Coffee Pour ---
+
 const LandingPage: React.FC = () => {
   const [doorsOpen, setDoorsOpen] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
@@ -88,7 +124,7 @@ const LandingPage: React.FC = () => {
             >
               <div className="max-w-[39rem] px-8 mx-auto">
                 <Image
-                  src="/images/coffeehacks_images/hackprinceton_2_nobg.png"
+                  src="/images/logos/hackprinceton_2_nobg.png"
                   alt="Hack Princeton"
                   className="w-full h-auto"
                   width={2000}
@@ -136,15 +172,15 @@ const LandingPage: React.FC = () => {
         >
           {showDoorContent && (
             <motion.div
-              className="relative hidden sm:flex flex-col items-center justify-center mx-auto z-30"
+              className="relative hidden overflow-hidden sm:flex flex-col items-center justify-center mx-auto z-30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             >
               <motion.img
-                src="/images/coffeehacks_images/coffeecup_nobg.png"
-                alt="Wobbling Cup"
-                className="w-24 mt-20 sm:w-32 lg:w-48 xl:w-64"
+                src="/images/coffeehacks_images/coffeetiger.png"
+                alt="Coffee Tiger"
+                className="w-24 sm:mt-20 sm:w-[20rem] lg:w-[24rem] xl:w-[32rem] pl-8"
                 animate={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{
                   duration: 8,
@@ -152,6 +188,7 @@ const LandingPage: React.FC = () => {
                   ease: "easeInOut",
                 }}
               />
+              <CoffeeStream />
             </motion.div>
           )}
 
@@ -190,9 +227,12 @@ const LandingPage: React.FC = () => {
               <div className="absolute w-[2px] h-8 bg-coffeeBrown origin-top-right -rotate-45" />
             </div>
             {/* sign plate */}
-            <div className="font-averia flex items-center mt-[1.3rem] border-2 border-coffeeWhite bg-coffeeBrown text-coffeeWhite font-bold pl-4 pr-3 py-1 rounded-md shadow-lg">
+            <a
+              href="https://my.hackprinceton.com/"
+              className="font-averia z-20 flex items-center mt-[1.3rem] border-2 border-coffeeWhite bg-coffeeBrown hover:animate-pulse text-coffeeWhite font-bold pl-4 pr-3 py-1 rounded-md shadow-lg"
+            >
               OPEN <ArrowBigRightDashIcon className="size-5 ml-1" />
-            </div>
+            </a>
           </motion.div>
         )}
 

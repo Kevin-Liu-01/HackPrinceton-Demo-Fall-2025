@@ -11,13 +11,13 @@ const Footer = () => {
         tileSize={"20rem"}
         speed={0.5}
         direction="down"
-        className="absolute z-10 h-full w-full opacity-10 rounded-xl overflow-hidden z-5"
+        className="absolute h-full w-full opacity-10 rounded-xl overflow-hidden z-5"
       />
       <Flex
         align="center"
         justify="center"
         gap="4"
-        className="max-w-6xl mx-auto py-8 "
+        className="max-w-6xl mx-auto py-8 z-20"
       >
         <Image
           src="/images/logos/hplogo.png"
@@ -30,7 +30,7 @@ const Footer = () => {
         <Flex
           direction="column"
           gap="2"
-          className="text-lg font-averia font-semibold whitespace-nowrap"
+          className="text-lg z-20 font-averia font-semibold whitespace-nowrap"
         >
           <Box>© 2025 HackPrinceton</Box>
           <Flex gap="4" align="center" className="transition-all">

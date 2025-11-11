@@ -2,7 +2,6 @@
 import { Box, Flex } from "@radix-ui/themes";
 // import { MatrixRainingLetters } from "react-mdr";
 import { BookMarkedIcon } from "lucide-react";
-import Checkerboard from "./checkerboard";
 
 const Resources = () => {
   return (
@@ -10,10 +9,8 @@ const Resources = () => {
       id="resources"
       gap="4"
       align="center"
-      className="relative flex-col text-white h-full overflow-clip w-full bg-retroBlue"
+      className="relative flex-col h-full overflow-clip w-full font-averia bg-coffeeWhite py-6"
     >
-      <Checkerboard scrollXTop={0} />
-
       <div className="absolute z-[5] h-full w-full top-0 left-0">
         {/* <MatrixRainingLetters
           key="foo-bar"
@@ -30,9 +27,9 @@ const Resources = () => {
         <Flex
           direction="column"
           align="center"
-          className="mb-8 text-3xl sm:text-5xl text-red-600 font-extrabold gap-4"
+          className="mb-8 text-3xl sm:text-5xl text-coffeeBrown font-extrabold gap-4"
         >
-          <span className="bg-black font-extrabold w-min whitespace-nowrap text-white text-sm border-2 border-white rounded-lg p-2">
+          <span className="bg-coffeeWhite font-extrabold w-min whitespace-nowrap text-sm border-2 border-coffeeBrown rounded-lg p-2">
             ADDITIONAL INFO
           </span>
           <p>RESOURCES</p>
@@ -40,10 +37,10 @@ const Resources = () => {
 
         <a
           href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-          className="p-4 bg-red-600/70 border border-red-500 backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
+          className="p-4 bg-coffeeGreen/70 border text-coffeeWhite border-coffeeGreen backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
         >
           <Flex align="center" gap="4" className="text-2xl font-semibold">
-            <Box className="border rounded-xl p-2 bg-red-500 text-red-900 border-red-900">
+            <Box className="border rounded-xl p-2 bg-coffeeWhite text-coffeeBrown border-coffeeBrown">
               {" "}
               <BookMarkedIcon size={24} />{" "}
             </Box>
@@ -54,22 +51,21 @@ const Resources = () => {
             to build an inclusive hacking environment.`}
           </p>
         </a>
-        <a
+        {/* <a
           href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-          className="p-2 mt-8 py-4 bg-gray-100 border border-red-500 backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
+          className="px-2 mt-8 bg-gray-100 border border-coffeeBrown backdrop-filter hover:scale-[1.01] transition-all backdrop-blur-sm rounded-3xl"
         >
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfzT3bXQoeJj8Mg1LB10wd5e6h99GqnnTD2PhkDJu5npohKnA/viewform?embedded=true"
-            className="w-full min-h-[447px]"
+            src="https://docs.google.com/forms/d/1BmTVgzZ3VOOTxjGCQ2iXg4SOQmzF6VFaVE8bPtX0peg/viewform?edit_requested=true"
+            className="w-full min-h-[447px] rounded-2xl"
             frameBorder="0"
             marginHeight={0}
             marginWidth={0}
           >
             Loading…
           </iframe>
-        </a>
+        </a> */}
       </Flex>
-      <Checkerboard scrollXTop={0} />
     </Flex>
   );
 };

@@ -22,7 +22,7 @@ const About = () => {
             <span className="font-extrabold w-min whitespace-nowrap text-sm border-2 border-coffeeGreen rounded-xl p-2">
               ABOUT
             </span>
-            <Text className=" text-4xl lg:text-5xl">Hacking since 1746.</Text>
+            <Text className=" text-4xl lg:text-5xl">Brewing since 2010.</Text>
           </Flex>
           <Flex
             direction="column"
@@ -65,7 +65,7 @@ const About = () => {
         </Flex>
         <Flex className="relative w-full h-48 sm:h-full">
           <Image
-            src="/images/coffeehacks_images/hackprinceton_1_nobg.png"
+            src="/images/logos/hackprinceton_1_nobg.png"
             alt="badge"
             fill={true}
             className={`object-contain z-10 rounded-3xl p-10`}

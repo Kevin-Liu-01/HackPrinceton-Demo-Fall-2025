@@ -18,8 +18,8 @@ const config: Config = {
         coffeeGreen: "#1e4027",
       },
       cursor: {
-        default: "url(/images/logos/cursorsmall.png) 8 8, auto",
-        pointer: "url(/images/logos/cursorsmall.png)) 8 8, pointer",
+        default: "url(/images/logos/hackprinceton_cursor.png) 8 8, auto",
+        pointer: "url(/images/logos/hackprinceton_cursor.png) 8 8, pointer",
       },
       keyframes: {
         "fade-in": {

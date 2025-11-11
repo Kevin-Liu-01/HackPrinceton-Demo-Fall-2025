@@ -44,7 +44,7 @@ const Faq = () => {
     {
       question: "When is HackPrinceton?",
       answer:
-        "This year, HackPrinceton will take place in-person from March 28th-30th, 2025. It’ll be 36 hours of hacking, events, speakers, social events, and more!",
+        "This year, HackPrinceton will take place in-person from November 7th-9th, 2025. It’ll be 36 hours of hacking, events, speakers, social events, and more!",
     },
     {
       question: "Who can attend?",
@@ -59,7 +59,7 @@ const Faq = () => {
     {
       question: "Is HackPrinceton in-person?",
       answer:
-        "HackPrinceton will be an entirely in-person experience for all students this spring!",
+        "HackPrinceton will be an entirely in-person experience for all students this fall!",
     },
     {
       question: "Do I need a team to participate?",
@@ -69,7 +69,7 @@ const Faq = () => {
     {
       question: "How do travel stipends work this year?",
       answer:
-        "If you apply and receive a travel stipend, we’ll cover up to $50 of your travel expenses! Otherwise, we suggest looking for funding through your university!",
+        "If you apply and receive a travel stipend, we’ll cover up a portion of your travel expenses! Otherwise, we suggest looking for funding through your university!",
     },
     {
       question: "Do I need to pay to participate in HackPrinceton?",

@@ -6,10 +6,10 @@ import {
   LeafIcon,
   DollarSignIcon,
   SchoolIcon,
-  Gamepad2Icon,
-  CogIcon,
-  TrophyIcon,
-  MedalIcon,
+  // Gamepad2Icon,
+  // CogIcon,
+  // TrophyIcon,
+  // MedalIcon,
 } from "lucide-react";
 
 const trackCards = [
@@ -28,9 +28,9 @@ const trackCards = [
     color: "bg-green-400 text-green-100 border-green-700",
   },
   {
-    title: "FINANCE",
+    title: "BUSINESS & ENTERPRISE",
     description:
-      "Projects that innovate financial systems, enhance financial literacy, or improve personal finance management. Ideas include budgeting apps, fraud detection tools, and blockchain-based solutions.",
+      "Projects that improve the efficiency of financial tools and streamline business management. Examples include financial tools for startups, B2B billing, dashboards, analytics, cybersecurity, and privacy, among others.",
     icon: <DollarSignIcon size={24} />,
     color: "bg-yellow-400 text-yellow-50 border-yellow-700",
   },
@@ -43,50 +43,50 @@ const trackCards = [
   },
 ];
 
-const extraAwards = [
-  //add best overall hack
-  {
-    title: "Best Overall Hack",
-    description: "Awarded to the best project overall.",
+// const extraAwards = [
+//   //add best overall hack
+//   {
+//     title: "Best Overall Hack",
+//     description: "Awarded to the best project overall.",
 
-    icon: (
-      <TrophyIcon
-        className="p-2 bg-amber-500 text-amber-200 border-amber-700 border rounded-xl h-12 w-12"
-        size={24}
-      />
-    ),
-  },
-  // {
-  //   title: "Best Rookie Hack",
-  //   description: "Awarded to the best project by a newbie hacker.",
-  //   icon: (
-  //     <MedalIcon
-  //       className="p-2 bg-gray-400 text-gray-200 border-retroBlue border rounded-xl h-12 w-12"
-  //       size={24}
-  //     />
-  //   ),
-  // },
-  {
-    title: "Best Game",
-    description: "Awarded to the best game project.",
-    icon: (
-      <Gamepad2Icon
-        className="p-2 bg-purple-500 text-purple-200 border-purple-700 border rounded-xl h-12 w-12"
-        size={24}
-      />
-    ),
-  },
-  {
-    title: "Best Hardware",
-    description: "Awarded to the best hardware project.",
-    icon: (
-      <CogIcon
-        className="p-2 bg-orange-500 text-orange-200 border-orange-700 border rounded-xl h-12 w-12"
-        size={24}
-      />
-    ),
-  },
-];
+//     icon: (
+//       <TrophyIcon
+//         className="p-2 bg-amber-500 text-amber-200 border-amber-700 border rounded-xl h-12 w-12"
+//         size={24}
+//       />
+//     ),
+//   },
+//   // {
+//   //   title: "Best Rookie Hack",
+//   //   description: "Awarded to the best project by a newbie hacker.",
+//   //   icon: (
+//   //     <MedalIcon
+//   //       className="p-2 bg-gray-400 text-gray-200 border-retroBlue border rounded-xl h-12 w-12"
+//   //       size={24}
+//   //     />
+//   //   ),
+//   // },
+//   {
+//     title: "Best Game",
+//     description: "Awarded to the best game project.",
+//     icon: (
+//       <Gamepad2Icon
+//         className="p-2 bg-purple-500 text-purple-200 border-purple-700 border rounded-xl h-12 w-12"
+//         size={24}
+//       />
+//     ),
+//   },
+//   {
+//     title: "Best Hardware",
+//     description: "Awarded to the best hardware project.",
+//     icon: (
+//       <CogIcon
+//         className="p-2 bg-orange-500 text-orange-200 border-orange-700 border rounded-xl h-12 w-12"
+//         size={24}
+//       />
+//     ),
+//   },
+// ];
 
 const TrackCard = ({ title, description, icon, color }) => {
   return (
@@ -127,7 +127,7 @@ const Tracks = () => {
             <span className="font-extrabold w-min whitespace-nowrap text-coffeeWhite text-sm border-2 border-coffeeWhite rounded-lg p-2">
               TRACKS
             </span>
-            <p>Fall 2025 TRACKS</p>
+            <p>FALL 2025 TRACKS</p>
           </Flex>
 
           {/* <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -171,7 +171,7 @@ const Tracks = () => {
         <Separator className="mt-8" size="4" />
 
         {/* Extra Awards Section */}
-        <Flex align="center" justify="center" className="flex-col mt-4">
+        {/* <Flex align="center" justify="center" className="flex-col mt-4">
           <h2 className="text-3xl font-bold font-averia text-coffeeWhite mb-6">
             EXTRA AWARDS
           </h2>
@@ -213,7 +213,7 @@ const Tracks = () => {
               </Flex>
             </Flex>
           </div>
-        </Flex>
+        </Flex> */}
 
         <Flex
           direction="column"

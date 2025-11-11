@@ -14,8 +14,8 @@ const Navbar = () => {
     { label: "About", href: "#about" },
     { label: "Tracks", href: "#tracks" },
     { label: "FAQ", href: "#faq" },
-    // { label: "Contributors", href: "#contributors" },
-    // { label: "Resources", href: "#resources" },
+    { label: "Contributors", href: "#contributors" },
+    { label: "Resources", href: "#resources" },
   ];
 
   return (
@@ -46,16 +46,23 @@ const Navbar = () => {
         >
           <div className="relative mr-auto h-full flex items-center">
             <Image
-              src="/images/coffeehacks_images/hackprinceton_3.png"
+              src="/images/logos/hackprinceton_3.png"
               alt="HackPrinceton Logo"
               className="relative h-full py-1 w-auto z-20"
               height={1000}
               width={1000}
             />
             <Image
-              src="/images/coffeehacks_images/hackpton_nobg.png"
+              src="/images/logos/hackprinceton_cream.png"
               alt="HackPrinceton Fall 2025 Logo"
-              className="relative h-full w-auto ml-1 z-20"
+              className="relative hidden h-full w-auto sm:flex ml-1 z-20"
+              height={1000}
+              width={1000}
+            />
+            <Image
+              src="/images/logos/hackpton_nobg.png"
+              alt="HackPrinceton Fall 2025 Logo"
+              className="relative h-full w-auto ml-1 z-20 flex sm:hidden"
               height={1000}
               width={1000}
             />

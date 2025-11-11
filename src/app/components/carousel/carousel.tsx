@@ -158,9 +158,7 @@ function Card({ url, name, ...props }) {
 
 function Banner(props) {
   const ref = useRef();
-  const texture = useTexture(
-    "/images/coffeehacks_images/hackprinceton_2_nobg.png"
-  );
+  const texture = useTexture("/images/logos/hackprinceton_cream.png");
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
   const scroll = useScroll();
   useFrame((state, delta) => {

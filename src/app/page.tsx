@@ -4,11 +4,11 @@ import LandingPage from "./components/landing_page";
 import About from "./components/about";
 import Tracks from "./components/tracks";
 import FAQ from "./components/faq";
-// import Contributors from "./components/contributors";
-// import Schedule from "./components/schedule";
-// import Resources from "./components/resources";
+import Contributors from "./components/contributors";
+import Schedule from "./components/schedule";
 import Carousel from "./components/carousel/carousel";
 import Footer from "./components/footer";
+import Resources from "./components/resources";
 
 export default function Home() {
   return (
@@ -19,9 +19,9 @@ export default function Home() {
       <About />
       <Tracks />
       <FAQ />
-      {/* <Schedule />
+      <Schedule />
       <Contributors />
-      <Resources /> */}
+      <Resources />
       <Carousel />
       <Footer />
     </div>
